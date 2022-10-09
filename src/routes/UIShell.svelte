@@ -6,6 +6,8 @@
 	SideNavItems,
 	SideNavLink,
 	SkipToContent,
+	Breadcrumb,
+	BreadcrumbItem,
 	Content,
 	Grid,
 	Row,
@@ -35,6 +37,15 @@
 
 <Content>
 	<Grid>
+	<Row>
+		<Column>
+			<Breadcrumb>
+			<!--  이쪽 url 쫓아서 breadcrumb 완성할 수 있게? -->
+			<BreadcrumbItem>Home</BreadcrumbItem>
+			</Breadcrumb>
+		</Column>
+		<div style="margin: 1rem;">
+	</Row>
 	<Row>
 		<Column>
 		<slot></slot>
