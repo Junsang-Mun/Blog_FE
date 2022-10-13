@@ -1,22 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
-	import { apiData, id, title, tag, preview } from './store.js';
-	import UIShell from './UIShell.svelte';
+	import { postPreview } from './scripts/apiCall.js';
+	import { apiData } from './scripts/store.js';
+	import UIShell from './components/UIShell.svelte'
 
 	onMount(async () => {
-		fetch("http://localhost:3030/api/post")
-		.then(response => {
-			response.json();
-		})
-		.then(data => apiData.set(data))
-		.catch(error => {
-			console.log(error);
-			return [];
-		});
+		postPreview();
+		console.log(apiData);
 	});
 </script>
 
 <UIShell currentLocation={["Main"]}>
 	<h1>Blog Titleeee</h1>
-	<p>{apiData[2]}</p>
+	<p>{apiData}</p>
 </UIShell>
