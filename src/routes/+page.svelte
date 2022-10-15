@@ -10,8 +10,9 @@
 	});
 </script>
 
-<UIShell currentLocation={["Main"]}>
+<UIShell currentLocation={["Main", "ㅁㄴㅇㄹ", "ㅁㄴㅇㄹㅁㄴㅇㄹ", "우하하"]}>
 	<h1>Blog Titleeee</h1>
-	<p>{data}</p>
-	<p>{apiData}</p>
+	<!--{#each $apiData as d}
+	<p>{d.posts}</p>
+	{/each}-->
 </UIShell>
