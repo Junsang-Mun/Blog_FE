@@ -12,6 +12,8 @@
 </script>
 
 <UIShell currentLocation={["Main", "Test"]}>
-	{$apiData.metadata.tag}
-	<p>asdfasdf</p>
+	{#if $apiData.body !== undefined}
+		<p>asjdfasidjfsaldfsdf</p>
+		{console.log($apiData.body)}
+	{/if}
 </UIShell>

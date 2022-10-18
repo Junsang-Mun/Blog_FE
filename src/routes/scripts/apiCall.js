@@ -3,16 +3,19 @@ import { apiData } from './store.js';
 
 const url = 'http://localhost:3030/api';
 
-export function postPreview() {
-	axios.get(`${url}/post`)
-	.then(response => {
-		console.log(response);
-		console.log(response.data);
-		apiData.set(response.data);
-	})
-	.catch(error => {
-		console.log(error);
-	});
+export async function postPreview() {
+	const response = await fetch(`${url}/post`);
+	const returnValue = await response.json();
+	return returnValue;
+	//axios.get(`${url}/post`)
+	//.then(response => {
+	//	console.log(response);
+	//	console.log(response.data);
+	//	apiData.set(response.data);
+	//})
+	//.catch(error => {
+	//	console.log(error);
+	//});
 }
 
 export function postDetail(id) {

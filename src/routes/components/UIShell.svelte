@@ -31,7 +31,7 @@
 	<SideNavItems>
 	<SideNavLink text="Home" />
 	<SideNavLink text="Tags" />
-	<SideNavLink text="Test" href="/test" />
+	<SideNavLink text="Test" href="/testingapi" />
 	</SideNavItems>
 </SideNav>
 
