@@ -1,22 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
-	import UIShell from '../components/UIShell.svelte';
+	import { apiData } from '../scripts/store.js';
 	import { postDetail } from '../scripts/apiCall.js';
-	//import { apiData } from '../scripts/store.js';
-	let data;
+	import UIShell from '../components/UIShell.svelte';
 
 	onMount(() => {
-		data = postDetail('0c48ff77955a438db0def51ef4767675');
-		console.log(data);
+		postDetail('0c48ff77955a438db0def51ef4767675');
+		console.log(apiData);
+		setTimeout(() => console.log($apiData), 10000);
 	});
 </script>
 
 <UIShell currentLocation={["Main", "Test"]}>
-	{#await data}
-	<p>promise pending...</p>
-	{:then datas}
-	<p>data.body.body</p>
-	{:catch error}
-	<p>promise error {error}</p>
-	{/await}
+	{$apiData.metadata.tag}
+	<p>asdfasdf</p>
 </UIShell>
